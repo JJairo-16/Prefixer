@@ -5,6 +5,7 @@ SendMode Input  ; Recommended for new scripts due to its superior speed and reli
 SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 
 #Include, lib\JSON.ahk
+#Include, userOptions.ahk
 
 ; * Lllegir configuració
 FileRead, jsonString, *P65001 %A_ScriptDir%\config.json
@@ -26,6 +27,11 @@ global firstCombo := false
     SetTimer, ResetCombo, % -Abs(comboTimer) ; ? reset després de 0.5 segons
 return
 
+; * ResetCombo
+ResetCombo:
+    firstCombo := false
+return
+
 ; ! Opcions
 #If firstCombo
 
@@ -35,16 +41,4 @@ return
     firstCombo := false
 return
 
-#If ; ? Fi del entorn
-
-; * ResetCombo
-ResetCombo:
-    firstCombo := false
-return
-
-; ! Commbinacions
-; * tests
-ExecuteO()
-{
-    MsgBox, Atajo Alt+Espai -> Alt+O detectat!
-}
+#If ; ? Fi de l'entorn

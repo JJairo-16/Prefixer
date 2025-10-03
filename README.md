@@ -13,10 +13,9 @@ Les configuracions genèriques es poden configurar en el fitxer [config.json](co
 - `comboTimer`: defineix el temps màxim (en mil·lisegons) que pot passar entre prémer el prefix i l'opció.
 
 ### Com editar les opcions?
-Per personalitzar el comportament, cal modificar l’script [Prefixer.ahk](Prefixer.ahk) d’AutoHotKey (AHK):
+- **Opcions:** defineixen l’accionament de cada tecla (funció vinculada i reinici de combinacions). Aquest es configura en el fitxer principal ([Prefixer.ahk](Prefixer.ahk)).
 
-- **Opcions:** defineixen l’accionament de cada tecla (funció vinculada i reinici de combinacions).  
-- **Combinacions:** contenen les funcions amb el comportament de cada opció. Aquestes s’han de definir seguint la sintaxi d’AHK.  
+- **Combinacions:** contenen les funcions amb el comportament de cada opció. Aquest es configura en el fitxer [userOptions.ahk](userOptions.ahk).
 
 ## Requisits
 És necessari tenir instal·lat [AutoHotKey](https://www.autohotkey.com/) (v1.1 i v2).
