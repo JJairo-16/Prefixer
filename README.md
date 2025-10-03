@@ -7,14 +7,19 @@ Prefixer és un menú ocult basat en combinacions de tecles (prefix i opció), p
 1. Prémer `ALT+Espai` per activar el menú.  
 2. En menys de 500 ms, prémer `ALT+<tecla>` per executar l’acció vinculada.  
 
-## Com editar les opcions?
+## Configuracins
+### Configuracions genèriques
+Les configuracions genèriques es poden configurar en el fitxer [config.json](config.json):
+- `comboTimer`: defineix el temps màxim (en mil·lisegons) que pot passar entre prémer el prefix i l'opció.
+
+### Com editar les opcions?
 Per personalitzar el comportament, cal modificar l’script [Prefixer.ahk](Prefixer.ahk) d’AutoHotKey (AHK):
 
 - **Opcions:** defineixen l’accionament de cada tecla (funció vinculada i reinici de combinacions).  
 - **Combinacions:** contenen les funcions amb el comportament de cada opció. Aquestes s’han de definir seguint la sintaxi d’AHK.  
 
 ## Requisits
-És necessari tenir instal·lat [AutoHotKey](https://www.autohotkey.com/) (v1.1 o v2).
+És necessari tenir instal·lat [AutoHotKey](https://www.autohotkey.com/) (v1.1 i v2).
 
 ## Instal·lació
 1. Descarrega o clona el repositori.  
