@@ -4,17 +4,30 @@
 SendMode Input  ; Recommended for new scripts due to its superior speed and reliability.
 SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 
-; * Variable global
-firstCombo := false
+#Include, lib\JSON.ahk
+
+; * Lllegir configuració
+FileRead, jsonString, *P65001 %A_ScriptDir%\config.json
+Data := JSON.Load(jsonString)
+
+; * Variables
+; Config
+comboTimer := Data.comboTimer  ; en ms (ej. 500). Si poses 10 -> 10 ms
+if !(comboTimer) {
+    comboTimer := 500
+}
+
+; Global
+global firstCombo := false
 
 ; * Primera combinació: Alt+Espai
 !Space::
     firstCombo := true
-    SetTimer, ResetCombo, -500 ; ? reset després de 0.5 segons
+    SetTimer, ResetCombo, % -Abs(comboTimer) ; ? reset després de 0.5 segons
 return
 
 ; ! Opcions
-if (firstCombo) {
+#If firstCombo
 
 ; * Segona combinació: Alt+O (test)
 !O::
@@ -22,7 +35,7 @@ if (firstCombo) {
     firstCombo := false
 return
 
-} ; ? Fi del entorn
+#If ; ? Fi del entorn
 
 ; * ResetCombo
 ResetCombo:
@@ -33,5 +46,5 @@ return
 ; * tests
 ExecuteO()
 {
-    MsgBox, Atajo Alt+Espacio -> Alt+O detectado!
+    MsgBox, Atajo Alt+Espai -> Alt+O detectat!
 }
