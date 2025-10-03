@@ -19,4 +19,7 @@ Per personalitzar el comportament, cal modificar l’script [Prefixer.ahk](Prefi
 ## Instal·lació
 1. Descarrega o clona el repositori.  
 2. Assegura’t que tens AutoHotKey instal·lat.  
-3. Obre [`Prefixer.ahk`](Prefixer.ahk) amb doble clic o executa’l amb AHK.  
+3. Obre [`Prefixer.ahk`](Prefixer.ahk) amb doble clic o executa’l amb AHK.
+
+## Llicència
+Aquest projecte està sota la llicència [MIT](LICENSE).
